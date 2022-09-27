@@ -77,6 +77,8 @@ data =[
 
 # record = coll.find({"status":"A"})
 
-record = coll.find({"status": {"$in": ["A", "P"]}})
+# record = coll.find({"status": {"$in": ["A", "P"]}})
+
+record = coll.find({"$or": [{'item': 'sketchbook'}, {'qty': 50}]})
 for i in record:
     print(i)
